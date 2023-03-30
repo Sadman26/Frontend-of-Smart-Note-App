@@ -8,12 +8,24 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap');
+        body{
+            background-color: #0468d9;
+        }
         .loginpart{
             text-align: center;
+        }
+        .loginpart h1{
+            font-family: 'Alkatra', sans-serif;
+            font-size: 40px;
+            color: #000000;
         }
         .loginpart input{
             margin: 7px;
             padding: 6px;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: #000000;
         }
         .loginpart input[type="submit"]{
             background-color: #4CAF50;
@@ -30,9 +42,9 @@
     <div class="loginpart">
         <form  method="post">
             <h1>Login</h1>
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" autocomplete="off" required>
             <br>
-            <input type="password" name="password" placeholder="Enter your password" required>
+            <input type="password" name="password" placeholder="Enter your password" autocomplete="off" required>
             <br>
             <input type="submit" name="submit" value="Login">
         </form>
