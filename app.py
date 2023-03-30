@@ -14,8 +14,20 @@ firebaseConfig = {
 firebase = pyrebase.initialize_app(firebaseConfig)
 db = firebase.database()
 auth=firebase.auth()
-@app.route('/')
-def index():
+@app.route('/',methods=['POST','GET'])
+def login():
+    if request.method=='POST':
+        email=request.form['email']
+        password=request.form['password']
+        try:
+            user=auth.sign_in_with_email_and_password(email,password)
+            if(user):
+                return redirect(url_for('notes'))
+        except:
+            return render_template('login.html')
+    return render_template('login.html')
+@app.route('/homepage')
+def notes():
     lox='thhWqxAVtvXygH7VukqgQqIbu342'
     datas=db.child("User").child(lox).child('Notes').get()
     return render_template('index.html',datas=datas)
