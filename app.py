@@ -30,5 +30,8 @@ def login():
 def notes():
     data=db.child('Admin_access').child('Notes').get()
     return render_template('index.html',datas=data)
+@app.route('/logout')
+def logout():
+    auth.current_user=None
+    return redirect(url_for('login'))
 app.run(debug=True)
- 

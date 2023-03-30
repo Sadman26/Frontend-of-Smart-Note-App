@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/8688356914.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +26,26 @@
             padding: 15px;
             margin: 5px;
         }
+        .float-btn{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            padding: 7px;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .float-btn:hover{
+            background-color: #0269d8;
+            color: #000000;
+        }
+        .float-btn a{
+            text-decoration: none;
+            color: #000000;
+        }
     </style>
     <div class="container">
         {% for i in datas%}
@@ -33,6 +54,14 @@
             <h4>{{i.val().email}}</h4>
         </div>
         {% endfor %}
+    </div>
+    <!--make a floatable button-->
+    <div class="float-btn">
+        
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        
     </div>
 </body>
 </html>
