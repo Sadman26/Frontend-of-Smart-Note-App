@@ -28,8 +28,7 @@ def login():
     return render_template('login.html')
 @app.route('/homepage')
 def notes():
-    lox='thhWqxAVtvXygH7VukqgQqIbu342'
-    datas=db.child("User").child(lox).child('Notes').get()
-    return render_template('index.html',datas=datas)
+    data=db.child('Admin_access').child('Notes').get()
+    return render_template('index.html',datas=data)
 app.run(debug=True)
  
