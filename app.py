@@ -1,5 +1,5 @@
-from flask import *
 import pyrebase
+from flask import *
 app = Flask(__name__,template_folder='temp')
 firebaseConfig = {
   "apiKey": "AIzaSyAowhZs3yUIdWdsHwNvgicuasMg5XfNf9c",
