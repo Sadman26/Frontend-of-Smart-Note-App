@@ -1,3 +1,4 @@
+#Backend part
 import pyrebase
 from flask import *
 app = Flask(__name__,template_folder='temp')
